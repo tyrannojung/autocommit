@@ -1,4 +1,5 @@
 #! /bin/bash
+. ~fouri/.bash_profile
 
 echo "autocommit ver0.1 start"
 
