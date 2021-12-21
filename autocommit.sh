@@ -16,7 +16,7 @@ if [  "$?" = "0" ]; then
 
 	git add .
 	git commit -m "Day $plus"
-	git push
+	git push origin master
 
 	echo "success"
 
