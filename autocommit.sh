@@ -11,7 +11,7 @@ if [  "$?" = "0" ]; then
 		echo "1" >> $Dir/$FILE
 	fi
 
-	sed -i "s/$(cat $Dir/$FILE)/'$(($(cat $Dir/$FILE) + 1))'/g" $Dir/$FILE
+	sed -i "s/$(cat $Dir/$FILE)/$(cat $Dir/$FILE) + 1/g" $Dir/$FILE
 
 	cd $Dir
 	git add .
