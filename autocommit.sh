@@ -11,7 +11,7 @@ if [  "$?" = "0" ]; then
 		echo "1" >> $Dir/$FILE
 	fi
 
-	plus=`$(cat $Dir/$FILE)+ 1`
+	plus=`expr $(cat $Dir/$FILE)+ 1`
 	echo "$plus !!!!!!!!!!!!!!!!"
 
 	sed -i "s/$(cat $Dir/$FILE)/plus/g" $Dir/$FILE
