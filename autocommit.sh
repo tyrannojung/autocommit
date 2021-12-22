@@ -12,7 +12,7 @@ if [  "$?" = "0" ]; then
 	fi
 
 	state="$(cat $Dir/$FILE)"
-	kk=$((state)) + 1
+	kk=(($((state)) + 1))
 
 	echo "$kk !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 
