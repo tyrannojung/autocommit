@@ -12,16 +12,17 @@ if [  "$?" = "0" ]; then
 	fi
 
 	state="$(cat $Dir/$FILE)"
-	state=$((state))
+	kk=$((state)) + 1
 
-	echo "$state !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+	echo "$kk !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 
-	((plus=$state + 1))
-	sed -i "s/$state/$plus/g" $Dir/$FILE
+#((plus=$state + 1))
+
+	sed -i "s/$state/$kk/g" $Dir/$FILE
 
 	cd $Dir
 	git add .
-	git commit -m "Day $plus"
+	git commit -m "Day $kk"
 	git push origin master
 
 	echo "success"
