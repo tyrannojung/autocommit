@@ -1,20 +1,21 @@
 #! /bin/bash
-. ~fouri/.bash_profile
 
 echo "autocommit ver0.1 start"
 
+Dir="/home/fouri/autocommit"
 FILE=".statistics_check"
 
 if [  "$?" = "0" ]; then
 
 	if [ ! -e $FILE ]; then
-		echo "1" >> $FILE
+		echo "1" >> $Dir/$FILE
 	fi
 
-	state=$(cat .statistics_check)
+	state=$(cat $Dir/$FILE)
 	((plus=$state + 1))
-	sed -i "s/$state/$plus/g" $FILE
+	sed -i "s/$state/$plus/g" $Dir/$FILE
 
+	cd $Dir
 	git add .
 	git commit -m "Day $plus"
 	git push origin master
