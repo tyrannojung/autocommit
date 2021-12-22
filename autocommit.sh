@@ -13,13 +13,11 @@ if [  "$?" = "0" ]; then
 
 	state="$(cat $Dir/$FILE)"
 	state= $state | sed 's/[^0-9]//g'
-
-	echo syslog12 | sed 's/[^0-9]//g'
 	echo "$state !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 
-#((plus=$state + 1))
+	((plus=$state + 1))
 
-	sed -i "s/$state/$kk/g" $Dir/$FILE
+	sed -i "s/$state/$plus/g" $Dir/$FILE
 
 	cd $Dir
 	git add .
