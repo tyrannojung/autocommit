@@ -11,11 +11,13 @@ if [  "$?" = "0" ]; then
 		echo "1" >> $Dir/$FILE
 	fi
 
-	sed -i "1s/.*/`expr $(cat $Dir/$FILE) + 1`/g" $Dir/$FILE
+	plus=`expr $(cat $Dir/$FILE) + 1`
+
+	sed -i "1s/.*/$plus/g" $Dir/$FILE
 
 	cd $Dir
 	git add .
-	git commit -m "Day $kk"
+	git commit -m "Day $plus"
 	git push origin master
 
 	echo "success"
