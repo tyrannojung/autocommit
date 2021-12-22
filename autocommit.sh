@@ -12,6 +12,7 @@ if [  "$?" = "0" ]; then
 	fi
 
 	state="$(cat $Dir/$FILE)"
+	state=$((state))
 
 	echo "$state !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 
