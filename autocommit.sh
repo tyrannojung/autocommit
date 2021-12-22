@@ -10,10 +10,10 @@ if [  "$?" = "0" ]; then
 	if [ ! -e $Dir/$FILE ]; then
 		echo "1" >> $Dir/$FILE
 	fi
-
-	plus=`expr $(cat $Dir/$FILE) + 1`
-
-	sed -i "1s/.*/$plus/" $Dir/$FILE
+	
+	state=$(cat $Dir/$FILE)
+	plus=`expr $state + 1`
+	sed -i "s/$state/$plus/g" $Dir/$FILE	
 
 	cd $Dir
 	git add .
