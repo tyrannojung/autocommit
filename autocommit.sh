@@ -7,7 +7,7 @@ FILE=".statistics_check"
 
 if [  "$?" = "0" ]; then
 
-	if [ ! -e $FILE ]; then
+	if [ ! -e $Dir/$FILE ]; then
 		echo "1" >> $Dir/$FILE
 	fi
 
