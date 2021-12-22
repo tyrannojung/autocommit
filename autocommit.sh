@@ -11,10 +11,9 @@ if [  "$?" = "0" ]; then
 		echo "1" >> $Dir/$FILE
 	fi
 
-	state="$(cat $Dir/$FILE)"
-	kk=(($(($state)) + 1))
+	state="$(cat $Dir/$FILE) | sed 's/[^0-9]//g'"
 
-	echo "$kk !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+	echo "$state !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 
 #((plus=$state + 1))
 
