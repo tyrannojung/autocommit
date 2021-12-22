@@ -11,8 +11,9 @@ if [  "$?" = "0" ]; then
 		echo "1" >> $Dir/$FILE
 	fi
 
-	state=$(cat $Dir/$FILE) | sed 's/[^0-9]//g'
-	
+	state="$(cat $Dir/$FILE)"
+	state= $state | sed 's/[^0-9]//g'
+
 	echo syslog12 | sed 's/[^0-9]//g'
 	echo "$state !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 
