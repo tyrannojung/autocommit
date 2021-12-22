@@ -13,7 +13,7 @@ if [  "$?" = "0" ]; then
 
 	plus=`expr $(cat $Dir/$FILE) + 1`
 
-	sed -i "1s/.*/$plus/g" $Dir/$FILE
+	sed -i "1s/.*/$plus/" $Dir/$FILE
 
 	cd $Dir
 	git add .
