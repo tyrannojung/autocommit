@@ -12,6 +12,7 @@ if [  "$?" = "0" ]; then
 	fi
 
 	state="$(cat $Dir/$FILE)" | tr -d ' '
+	echo "$state"
 	((plus=$state + 1))
 	sed -i "s/$state/$plus/g" $Dir/$FILE
 
