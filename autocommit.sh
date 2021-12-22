@@ -11,13 +11,7 @@ if [  "$?" = "0" ]; then
 		echo "1" >> $Dir/$FILE
 	fi
 
-	state="$(cat $Dir/$FILE)"
-	state= $state | sed 's/[^0-9]//g'
-	echo "$state !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-
-	((plus=$state + 1))
-
-	sed -i "s/$state/$plus/g" $Dir/$FILE
+	sed -i "s/$(cat $Dir/$FILE)/(($(cat $Dir/$FILE) + 1))/g" $Dir/$FILE
 
 	cd $Dir
 	git add .
