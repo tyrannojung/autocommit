@@ -11,10 +11,7 @@ if [  "$?" = "0" ]; then
 		echo "1" >> $Dir/$FILE
 	fi
 
-	plus=`expr $(cat $Dir/$FILE) + 1`
-	echo "$plus !!!!!!!!!!!!!!!!"
-
-	sed -i "s/$(cat $Dir/$FILE)/plus/g" $Dir/$FILE
+	sed -i "s/$(cat $Dir/$FILE)/`expr $(cat $Dir/$FILE) + 1`/g" $Dir/$FILE
 
 	cd $Dir
 	git add .
