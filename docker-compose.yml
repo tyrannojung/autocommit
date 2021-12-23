@@ -1,0 +1,14 @@
+version: "3"
+services:
+  auto:
+    image: my_alpine_cron:latest
+    restart: always
+    volumes:
+      - /home/fouri/.ssh:/root/.ssh
+    command:
+      - /bin/sh
+      - -ecx
+      - |
+       crond -f
+       sleep infinity	
+

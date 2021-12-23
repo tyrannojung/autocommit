@@ -1,9 +1,11 @@
-#! /bin/bash
+#! /bin/sh
 
 echo "autocommit ver0.1 start"
 
-Dir="/home/fouri/autocommit"
+Dir="/autocommit"
 FILE=".statistics_check"
+
+echo $Dir/$FILE
 
 if [  "$?" = "0" ]; then
 
@@ -27,4 +29,3 @@ else
     echo "fail"
     exit 1
 fi
-
